@@ -1,16 +1,14 @@
-@extends('layouts.admin.master')
+<?php $__env->startSection('title', 'Follow Up Complaint'); ?>
 
-@section('title', 'Follow Up Complaint')
-
-@section('breadcrumb-title')
+<?php $__env->startSection('breadcrumb-title'); ?>
     <h3>Follow Up Complaint</h3>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-items')
+<?php $__env->startSection('breadcrumb-items'); ?>
     <li class="breadcrumb-item"><a href=""> Follow Up Complaint</i></a></li>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -58,18 +56,18 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@push('before-style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/datatables.css') }}">
-@endpush
+<?php $__env->startPush('before-style'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/vendors/datatables.css')); ?>">
+<?php $__env->stopPush(); ?>
 
-@push('after-style')
+<?php $__env->startPush('after-style'); ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.8/sweetalert2.min.css" integrity="sha512-OWGg8FcHstyYFwtjfkiCoYHW2hG3PDWwdtczPAPUcETobBJOVCouKig8rqED0NMLcT9GtE4jw6IT1CSrwY87uw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-@endpush
+<?php $__env->stopPush(); ?>
 
-@push('after-script')
-    <script src="{{ asset('assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
+<?php $__env->startPush('after-script'); ?>
+    <script src="<?php echo e(asset('assets/js/datatable/datatables/jquery.dataTables.min.js')); ?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.8/sweetalert2.min.js" integrity="sha512-FbWDiO6LEOsPMMxeEvwrJPNzc0cinzzC0cB/+I2NFlfBPFlZJ3JHSYJBtdK7PhMn0VQlCY1qxflEG+rplMwGUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function() {
@@ -94,7 +92,7 @@
                 responsive: true,
                 ordering: true,
                 ajax: {
-                    url: '{!! url()->current() !!}',
+                    url: '<?php echo url()->current(); ?>',
                 },
                 columns: [
                     {
@@ -135,4 +133,6 @@
             });
         });
     </script>
-@endpush
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\RSUD\e-cus_friends\resources\views/complaint/admin/index-followup.blade.php ENDPATH**/ ?>

@@ -43,9 +43,11 @@ class ComplaintController extends Controller
                 })
                 ->addColumn('PRIORITAS', function ($prioritas) {
                     if ($prioritas->PRIORITAS == 1) {
-                        return '<span class="badge rounded-pill badge-info">Tidak Darurat</span>';
+                        return '<span class="badge rounded-pill badge-info">Pagi</span>';
                     } elseif ($prioritas->PRIORITAS == 2) {
-                        return '<span class="badge rounded-pill badge-danger">Darurat</span>';
+                        return '<span class="badge rounded-pill badge-warning">Siang</span>';
+                    }else{
+                        return '<span class="badge rounded-pill badge-dark">Malam</span>';
                     }
                 })
                 ->rawColumns(['action', 'status', 'PRIORITAS'])->make();
@@ -86,9 +88,9 @@ class ComplaintController extends Controller
                 })
                 ->addColumn('PRIORITAS', function ($prioritas) {
                     if ($prioritas->PRIORITAS == 1) {
-                        return '<span class="badge rounded-pill badge-info">Tidak Darurat</span>';
+                        return '<span class="badge rounded-pill badge-info">Pagi</span>';
                     } elseif ($prioritas->PRIORITAS == 2) {
-                        return '<span class="badge rounded-pill badge-danger">Darurat</span>';
+                        return '<span class="badge rounded-pill badge-danger">Siang</span>';
                     }
                 })
                 ->addColumn('date', function ($item) {

@@ -53,17 +53,17 @@ $(document).ready(function () {
                         icon: 'success',
                         allowOutsideClick: false,
                         allowEscapeKey: false,
-                    }).then((result) => {
-                        Swal.fire({
-                            title: 'Simpan Nomor Pengaduan Anda',
-                            text: response.ticket,
-                            icon: 'info',
-                            allowOutsideClick: false,
-                            allowEscapeKey: false,
+                    // }).then((result) => {
+                    //     Swal.fire({
+                            // title: 'Simpan Nomor Pengaduan Anda',
+                            // text: response.ticket,
+                            // icon: 'info',
+                            // allowOutsideClick: false,
+                            // allowEscapeKey: false,
                         }).then((result) => {
                             location.reload()
                         })
-                    });
+                    // });
                 }
                 $('#add_complaint_button').removeAttr('disabled', 'disabled');
                 $('#add_complaint_loading').removeClass('spinner-border');
