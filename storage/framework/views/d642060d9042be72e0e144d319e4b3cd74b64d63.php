@@ -15,10 +15,9 @@
                                 
                                 <div class="row gy-4">
                                     <div class="form-group col-md-12 mb-2 mt-4">
-                                        <label for="report_name">Nama Pelapor</label>
-                                        <input id="ticket" type="hidden" name="complaint_ticket"
-                                            value="<?php echo e($complaintTicket); ?>" readonly>
-                                        <input class="form-control" id="reported_name" type="text" name="reported_name" required>
+                                        <label for="tanggal_input">Tanggal/Bulan/Tahun</label>
+                                        <input id="ticket" type="hidden" name="tanggal_input">
+                                        <input class="form-control" id="tanggal_input" type="date" name="tanggal_input" required>
                                         
                                     </div>
                                     

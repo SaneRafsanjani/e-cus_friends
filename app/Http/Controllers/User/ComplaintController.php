@@ -68,6 +68,8 @@ class ComplaintController extends Controller
                     'STATUS'            => 1,
                     'PRIORITAS'         => $request->priority,
                     'KETERANGAN'        => 'Diproses',
+                    'TANGGAL_INPUT'     => $request->tanggal_input,
+
                 ];
                 if ($request->hasFile('file')) {
                     $data['FILE'] = $request->file = $request->file('file')->storeAs('uploads', 'Complaint_' . $request->complaint_ticket . '.' . $request->file->extension());
@@ -209,8 +211,9 @@ class ComplaintController extends Controller
     public function validation(Request $request)
     {
         $rules = [
-            'complaint_ticket'      => 'required',
-            'reported_name'         => 'required',
+            // 'complaint_ticket'      => 'required',
+            'tanggal_input'         => 'required',
+            // 'reported_name'         => 'required',
             // 'address'               => 'required',
             'desc'                  => 'required',
             // 'volume'                => 'required|numeric',
@@ -241,9 +244,9 @@ class ComplaintController extends Controller
         ];
 
         $messages = [
-            'complaint_ticket.required'     => 'Nomor pengaduan harus diisi',
+            // 'complaint_ticket.required'     => 'Nomor pengaduan harus diisi',
             // 'violation_type.required'       => 'Jenis pelanggaran harus diisi',
-            'reported_name.required'        => 'Nama terlapor harus diisi',
+            // 'reported_name.required'        => 'Nama terlapor harus diisi',
             // 'address.required'              => 'Lokasi kejadian harus diisi',
             'desc.required'                 => 'Uraian Pengaduan harus diisi',
             'file.required'                 => 'Lampiran bukti harus diisi',
@@ -251,6 +254,8 @@ class ComplaintController extends Controller
             'file.mimes'                    => 'Isi lampiran bukti dengan format yang disarankan',
             'reporter_name.required'        => 'Nama pelapor harus diisi',
             'reporter_address.required'     => 'Alamat pelapor harus diisi',
+            'tanggal_input.required'     => 'tanggal harus diisi',
+
         ];
 
         return Validator::make($request->all(), $rules, $messages);

@@ -17,8 +17,9 @@
                             <table class="display" id="complaint-table">
                                 <thead>
                                     <tr>
+                                         
+                                        <th>Waktu </th>
                                         
-                                        <th>Tanggal Kerusakan</th>
                                         
                                         <th>Keterangan Shift</th>
                                         <th>Uraian Pengaduan</th>
@@ -66,14 +67,14 @@
                     //     data: 'KODE_PENGADUAN',
                     //     name: 'KODE_PENGADUAN'
                     // },
-                    // {
-                    //     data: 'NAMA_TERLAPOR',
-                    //     name: 'NAMA_TERLAPOR'
-                    // },
                     {
-                        data: 'TANGGAL_PENGADUAN',
-                        name: 'TANGGAL_PENGADUAN'
+                        data: 'TANGGAL_INPUT',
+                        name: 'TANGGAL_INPUT'
                     },
+                    // {
+                    //     data: 'TANGGAL_PENGADUAN',
+                    //     name: 'TANGGAL_PENGADUAN'
+                    // },
                     // {
                     //     data: 'LOKASI',
                     //     name: 'LOKASI'

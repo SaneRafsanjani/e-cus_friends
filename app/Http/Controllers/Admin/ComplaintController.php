@@ -26,7 +26,7 @@ class ComplaintController extends Controller
 
         if ($request->ajax()) {
             DB::statement(DB::raw('set @rownum=0'));
-            $complaint = Complaint::select([DB::raw('@rownum  := @rownum  + 1 AS rownum'), 'UUID', 'KODE_PENGADUAN', 'NAMA_TERLAPOR', 'TANGGAL_PENGADUAN', 'LOKASI', 'PRIORITAS', 'URAIAN', 'PELAKSANA', 'CREATED_AT'])
+            $complaint = Complaint::select([DB::raw('@rownum  := @rownum  + 1 AS rownum'), 'UUID', 'KODE_PENGADUAN', 'NAMA_TERLAPOR', 'TANGGAL_PENGADUAN', 'LOKASI', 'PRIORITAS', 'URAIAN', 'PELAKSANA','TANGGAL_INPUT', 'CREATED_AT'])
                 ->where('STATUS', 1)
                 ->orderBy('CREATED_AT', 'desc');
 
@@ -63,7 +63,7 @@ class ComplaintController extends Controller
             $prioritas = $request->get('prioritas');
 
             DB::statement(DB::raw('set @rownum=0'));
-            $complaint = Complaint::select([DB::raw('@rownum  := @rownum  + 1 AS rownum'), 'UUID', 'KODE_PENGADUAN', 'NAMA_TERLAPOR', 'TANGGAL_PENGADUAN', 'LOKASI', 'STATUS', 'PRIORITAS', 'URAIAN', 'CREATED_AT'])
+            $complaint = Complaint::select([DB::raw('@rownum  := @rownum  + 1 AS rownum'), 'UUID', 'KODE_PENGADUAN', 'NAMA_TERLAPOR', 'TANGGAL_PENGADUAN', 'LOKASI', 'STATUS', 'PRIORITAS', 'URAIAN','TANGGAL_INPUT', 'CREATED_AT'])
                 ->when($status, function ($query) use ($status) {
                     return $query->where('status', $status);
                 })
