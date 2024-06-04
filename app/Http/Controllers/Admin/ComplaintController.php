@@ -26,7 +26,7 @@ class ComplaintController extends Controller
 
         if ($request->ajax()) {
             DB::statement(DB::raw('set @rownum=0'));
-            $complaint = Complaint::select([DB::raw('@rownum  := @rownum  + 1 AS rownum'), 'UUID', 'KODE_PENGADUAN', 'NAMA_TERLAPOR', 'TANGGAL_PENGADUAN', 'LOKASI', 'PRIORITAS', 'URAIAN', 'PELAKSANA','TANGGAL_INPUT', 'CREATED_AT'])
+            $complaint = Complaint::select([DB::raw('@rownum  := @rownum  + 1 AS rownum'), 'UUID', 'KODE_PENGADUAN', 'NAMA_TERLAPOR', 'TANGGAL_PENGADUAN', 'LOKASI', 'PRIORITAS', 'URAIAN', 'PELAKSANA','TANGGAL_INPUT','KONDISI_IGD','KETERANGAN_SHIFT', 'CREATED_AT'])
                 ->where('STATUS', 1)
                 ->orderBy('CREATED_AT', 'desc');
 
@@ -43,11 +43,9 @@ class ComplaintController extends Controller
                 })
                 ->addColumn('PRIORITAS', function ($prioritas) {
                     if ($prioritas->PRIORITAS == 1) {
-                        return '<span class="badge rounded-pill badge-info">Pagi</span>';
+                        return '<rounded-pill bg-info text-white">Pagi</span>';
                     } elseif ($prioritas->PRIORITAS == 2) {
-                        return '<span class="badge rounded-pill badge-warning">Siang</span>';
-                    }else{
-                        return '<span class="badge rounded-pill badge-dark">Malam</span>';
+                        return '<span class="rounded-pill bg-info text-white">Siang</span>';
                     }
                 })
                 ->rawColumns(['action', 'status', 'PRIORITAS'])->make();
@@ -63,7 +61,7 @@ class ComplaintController extends Controller
             $prioritas = $request->get('prioritas');
 
             DB::statement(DB::raw('set @rownum=0'));
-            $complaint = Complaint::select([DB::raw('@rownum  := @rownum  + 1 AS rownum'), 'UUID', 'KODE_PENGADUAN', 'NAMA_TERLAPOR', 'TANGGAL_PENGADUAN', 'LOKASI', 'STATUS', 'PRIORITAS', 'URAIAN','TANGGAL_INPUT', 'CREATED_AT'])
+            $complaint = Complaint::select([DB::raw('@rownum  := @rownum  + 1 AS rownum'), 'UUID', 'KODE_PENGADUAN', 'NAMA_TERLAPOR', 'TANGGAL_PENGADUAN', 'LOKASI', 'STATUS', 'PRIORITAS', 'URAIAN','TANGGAL_INPUT','KONDISI_IGD','KETERANGAN_SHIFT', 'CREATED_AT'])
                 ->when($status, function ($query) use ($status) {
                     return $query->where('status', $status);
                 })

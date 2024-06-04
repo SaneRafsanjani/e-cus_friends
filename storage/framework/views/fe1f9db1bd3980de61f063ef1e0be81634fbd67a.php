@@ -17,12 +17,9 @@
                             <table class="display" id="complaint-table">
                                 <thead>
                                     <tr>
-                                         
-                                        <th>Waktu </th>
-                                        
-                                        
+                                        <th>Waktu Laporan</th>
                                         <th>Keterangan Shift</th>
-                                        <th>Uraian Pengaduan</th>
+                                        <th>Kondisi IGD</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -63,29 +60,19 @@
                     },
                 },
                 columns: [
-                    // {
-                    //     data: 'KODE_PENGADUAN',
-                    //     name: 'KODE_PENGADUAN'
-                    // },
+
                     {
                         data: 'TANGGAL_INPUT',
                         name: 'TANGGAL_INPUT'
                     },
-                    // {
-                    //     data: 'TANGGAL_PENGADUAN',
-                    //     name: 'TANGGAL_PENGADUAN'
-                    // },
-                    // {
-                    //     data: 'LOKASI',
-                    //     name: 'LOKASI'
-                    // },
+
                     {
-                        data: 'PRIORITAS',
+                        data: 'KETERANGAN_SHIFT',
                         name: 'KETERANGAN SHIFT'
                     },
                     {
-                        data: 'URAIAN',
-                        name: 'URAIAN'
+                        data: 'KONDISI_IGD',
+                        name: 'KONDISI IGD'
                     },
                     {
                         data: 'action',

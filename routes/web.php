@@ -30,6 +30,8 @@ Route::middleware(['auth', 'isadmin'])->group(function () {
 
     Route::get('/admns/complaint/inbox', [AdminComplaintController::class, 'indexInbox'])->name('admin.complaint.inbox');
     Route::get('/admns/complaint/inbox/show/{id}', [AdminComplaintController::class, 'show_superadmin'])->name('admin.complaint.inbox.show');
+
+
     Route::post('/admns/complaint/petugas/store', [AdminComplaintController::class, 'storePetugas'])->name('admin.complaint.petugas.store');
 
     Route::get('/admns/complaint/follow-up', [AdminComplaintController::class, 'indexFollowup'])->name('admin.complaint.followup');

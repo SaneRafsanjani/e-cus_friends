@@ -78,49 +78,30 @@
             </tr>
         </thead>
         <tbody>
+
             <tr>
-                <td width="30%">Tanggal Pengaduan</td>
-                <td width="70%">{{ $complaint->TANGGAL_PENGADUAN }}</td>
+                <th>Keterangan Waktu</th>
+                <td>{{ $complaint->TANGGAL_INPUT }}</td>
             </tr>
+
             <tr>
-                <th>Tanggal Pengaduan</th>
-                <td>{{ $complaint->TANGGAL_PENGADUAN }}</td>
+                <th>Keterangan Shift</th>
+                <td>{{ $complaint->KETERANGAN_SHIFT }}</td>
             </tr>
+
             <tr>
-                <th>Kode Pengaduan</th>
-                <td>{{ $complaint->KODE_PENGADUAN }}</td>
+                <th>Kondisi IGD</th>
+                <td>{{ $complaint->KONDISI_IGD }}</td>
             </tr>
-            <tr>
-                <th>Tanggal Kerusakan</th>
-                <td>{{ $complaint->TANGGAL_KEJADIAN }}</td>
+              <tr>
+                <th>Kondisi IGD</th>
+                <td>{{ $complaint->KONDISI_IGD }}</td>
             </tr>
-            <tr>
-                <th>Ruangan</th>
-                <td>{{ $complaint->LOKASI }}</td>
-            </tr>
-            <tr>
-                <th>Uraian Pengaduan</th>
-                <td>{{ $complaint->URAIAN }}</td>
-            </tr>
+
+
         </tbody>
     </table>
-    <table class="table">
-        <thead>
-            <tr>
-                <th colspan="2">Data Pelapor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td width="30%">Nama Pelapor</td>
-                <td width="70%">{{ $complaint->NAMA_PELAPOR }}</td>
-            </tr>
-            <tr>
-                <th>Nama Pelapor</th>
-                <td>{{ $complaint->NAMA_TERLAPOR }}</td>
-            </tr>
-        </tbody>
-    </table>
+
 </body>
 
 </html>

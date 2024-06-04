@@ -18,9 +18,6 @@ class Complaint extends Model
     protected $fillable = [
         'UUID',
         'TANGGAL_PENGADUAN',
-        // 'KODE_PENGADUAN',
-        // 'ID_PELANGGARAN',
-        // 'NAMA_TERLAPOR',
         'LOKASI',
         'NAMA_BARANG',
         'VOLUME',
@@ -31,7 +28,9 @@ class Complaint extends Model
         'STATUS',
         'KETERANGAN',
         'PRIORITAS',
-        'TANGGAL_INPUT'
+        'TANGGAL_INPUT',
+        'KONDISI_IGD',
+        'KETERANGAN_SHIFT'
     ];
 
     // public function violation()

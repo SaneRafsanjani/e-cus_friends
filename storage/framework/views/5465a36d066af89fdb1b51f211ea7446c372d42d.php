@@ -78,49 +78,30 @@
             </tr>
         </thead>
         <tbody>
+
             <tr>
-                <td width="30%">Tanggal Pengaduan</td>
-                <td width="70%"><?php echo e($complaint->TANGGAL_PENGADUAN); ?></td>
+                <th>Keterangan Waktu</th>
+                <td><?php echo e($complaint->TANGGAL_INPUT); ?></td>
             </tr>
+
             <tr>
-                <th>Tanggal Pengaduan</th>
-                <td><?php echo e($complaint->TANGGAL_PENGADUAN); ?></td>
+                <th>Keterangan Shift</th>
+                <td><?php echo e($complaint->KETERANGAN_SHIFT); ?></td>
             </tr>
+
             <tr>
-                <th>Kode Pengaduan</th>
-                <td><?php echo e($complaint->KODE_PENGADUAN); ?></td>
+                <th>Kondisi IGD</th>
+                <td><?php echo e($complaint->KONDISI_IGD); ?></td>
             </tr>
-            <tr>
-                <th>Tanggal Kerusakan</th>
-                <td><?php echo e($complaint->TANGGAL_KEJADIAN); ?></td>
+              <tr>
+                <th>Kondisi IGD</th>
+                <td><?php echo e($complaint->KONDISI_IGD); ?></td>
             </tr>
-            <tr>
-                <th>Ruangan</th>
-                <td><?php echo e($complaint->LOKASI); ?></td>
-            </tr>
-            <tr>
-                <th>Uraian Pengaduan</th>
-                <td><?php echo e($complaint->URAIAN); ?></td>
-            </tr>
+
+
         </tbody>
     </table>
-    <table class="table">
-        <thead>
-            <tr>
-                <th colspan="2">Data Pelapor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td width="30%">Nama Pelapor</td>
-                <td width="70%"><?php echo e($complaint->NAMA_PELAPOR); ?></td>
-            </tr>
-            <tr>
-                <th>Nama Pelapor</th>
-                <td><?php echo e($complaint->NAMA_TERLAPOR); ?></td>
-            </tr>
-        </tbody>
-    </table>
+
 </body>
 
 </html>

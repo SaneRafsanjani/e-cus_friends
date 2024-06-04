@@ -19,69 +19,49 @@
         <div class="row">
             <div class="col-12">
                 <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                    <div class="card-header">
-                        <div class="btn-group">
-                            {{-- <a href="{{ route('admin.complaint.ev.download', $id) }}" target="_blank"
-                                class="btn btn-outline-primary"><i class="fa fa-download"></i> Download Bukti</a> --}}
-                            <a href="{{ route('admin.complaint.print', $id) }}" class="btn btn-outline-primary"
-                                target="_blank"><i class="fa fa-print"></i> Print</a>
-                            @if ($complaint->STATUS == 1)
-                                <button class="btn btn-outline-primary" type="button" id="proceed_complaint"
-                                    data-id="{{ $id }}" data-status="2"><i class="fa fa-check"></i>
-                                    Proses</button>
-                                {{-- @elseif ($complaint->STATUS == 2)
-                                <button class="btn btn-outline-primary" type="button" id="proceed_complaint"
-                                    data-id="{{ $id }}" data-status="3"><i class="fa fa-check"></i>
-                                    Selesai</button> --}}
-                            @endif
-                        </div>
-                    </div>
+
                     <div class="card-body">
                         <div class="row">
                             <div class="table-rensponsive">
                                 <table class="table">
                                     <tr>
                                         <th colspan="2">
-                                            <h5>Data Pengaduan</h5>
+                                            <h5>Data Laporan</h5>
                                         </th>
                                     </tr>
+
                                     <tr>
-                                        <th>Tanggal Pengaduan</th>
-                                        <td>{{ $complaint->TANGGAL_KEJADIAN }}</td>
+                                        <th>Keterangan Waktu</th>
+                                        <td>{{ $complaint->TANGGAL_INPUT }}</td>
                                     </tr>
+
                                     <tr>
-                                        <th>Kode Pengaduan</th>
-                                        <td>{{ $complaint->KODE_PENGADUAN }}</td>
+                                        <th>Keterangan Shift</th>
+                                        <td>{{ $complaint->KETERANGAN_SHIFT }}</td>
                                     </tr>
+
                                     <tr>
-                                        <th>Tanggal Kerusakan</th>
-                                        <td>{{ $complaint->TANGGAL_KEJADIAN }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Ruangan</th>
-                                        <td>{{ $complaint->LOKASI }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Uraian Pengaduan</th>
-                                        <td>{{ $complaint->URAIAN }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Notes</th>
-                                        <td>{{ $complaint->NOTES }}</td>
+                                        <th>Kondisi IGD</th>
+                                        <td>{{ $complaint->KONDISI_IGD }}</td>
                                     </tr>
                                     <tr>
                                         <th>Foto</th>
                                         <td><button class="btn btn-pill btn-primary btn-sm" type="button"
                                             data-bs-target="#lihat" data-bs-toggle="modal" type="button">Lihat</button></td>
                                     </tr>
+
+
+
                                     <tr>
-                                        <th colspan="2">
-                                            <h5>Data Pelapor</h5>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>Nama Pelapor</th>
-                                        <td>{{ $complaint->NAMA_TERLAPOR }}</td>
+                                        <th>Cetak Pdf</th>
+
+                                      <td>
+                                        <div class="btn-group">
+                                            <a href="{{ route('admin.complaint.print', $id) }}" class="btn btn-primary"
+                                                target="_blank"><i class="fa fa-print"></i>Cetak Pdf </a>
+
+                                        </div>
+                                    </td>
                                     </tr>
                                 </table>
                             </div>

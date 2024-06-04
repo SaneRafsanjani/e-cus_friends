@@ -53,22 +53,20 @@ class ComplaintController extends Controller
                     'message' => $validation->messages(),
                 ]);
             } else {
-                // $data = $request->all();
                 $data = [
                     'UUID'              => Uuid::uuid6()->toString(),
                     'TANGGAL_PENGADUAN' => date('y-m-d'),
                     'KODE_PENGADUAN'    => $request->complaint_ticket,
                     'NAMA_TERLAPOR'     => $request->reported_name,
-                    // 'LOKASI'            => $request->address,
                     'TANGGAL_KEJADIAN'  => date('Y-m-d H:i:s'),
                     'NAMA_BARANG'       => $request->nama_barang,
-                    // 'VOLUME'            => $request->volume,
                     'KATEGORI'          => $request->category,
-                    'URAIAN'            => $request->desc,
+                    'KONDISI_IGD'       => $request->desc,
                     'STATUS'            => 1,
                     'PRIORITAS'         => $request->priority,
                     'KETERANGAN'        => 'Diproses',
                     'TANGGAL_INPUT'     => $request->tanggal_input,
+                    'KETERANGAN_SHIFT'  => $request->keterangan_shift,
 
                 ];
                 if ($request->hasFile('file')) {
@@ -248,7 +246,7 @@ class ComplaintController extends Controller
             // 'violation_type.required'       => 'Jenis pelanggaran harus diisi',
             // 'reported_name.required'        => 'Nama terlapor harus diisi',
             // 'address.required'              => 'Lokasi kejadian harus diisi',
-            'desc.required'                 => 'Uraian Pengaduan harus diisi',
+            'desc.required'                 => 'KONDISI_IGD harus diisi',
             'file.required'                 => 'Lampiran bukti harus diisi',
             'file.max'                      => 'Lampiran bukti maksimal 10 mb',
             'file.mimes'                    => 'Isi lampiran bukti dengan format yang disarankan',
