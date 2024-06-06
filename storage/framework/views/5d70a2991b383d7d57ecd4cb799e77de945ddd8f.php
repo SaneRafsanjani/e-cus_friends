@@ -1,11 +1,11 @@
 <?php $__env->startSection('title', 'Dashboard'); ?>
 
 <?php $__env->startSection('breadcrumb-title'); ?>
-    <h3>Report Summary</h3>
+    <h3>Rekap Laporan</h3>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-items'); ?>
-    <li class="breadcrumb-item"><a href=""> Report Summary</i></a></li>
+    <li class="breadcrumb-item"><a href=""> Rekap Laporan</i></a></li>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -29,7 +29,7 @@
                         <form action="<?php echo e(route('admin.complaint.report.ex')); ?>" method="post">
                             <?php echo csrf_field(); ?>
                             <div class="row">
-                                
+
                                 <div class="form-group col-md-12 mb-3" id="daily_month">
                                     <label for="daily_month">Bulan</label>
                                     <select class="form-select" name="daily_month">
@@ -57,7 +57,7 @@
                                         <?php endfor; ?>
                                     </select>
                                 </div>
-                                
+
                                 <div class="form-group col-md-12 mb-3">
                                     <button class="btn btn-danger">Cetak PDF</button>
                                 </div>

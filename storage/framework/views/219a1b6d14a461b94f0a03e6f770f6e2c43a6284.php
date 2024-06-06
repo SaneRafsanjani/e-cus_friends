@@ -42,7 +42,11 @@
                                         <th>Kondisi IGD</th>
                                         <td><?php echo e($complaint->KONDISI_IGD); ?></td>
                                     </tr>
-
+                                    <tr>
+                                        <th>Foto</th>
+                                        <td><button class="btn btn-pill btn-primary btn-sm" type="button"
+                                            data-bs-target="#lihat" data-bs-toggle="modal" type="button">Lihat</button></td>
+                                    </tr>
 
 
 

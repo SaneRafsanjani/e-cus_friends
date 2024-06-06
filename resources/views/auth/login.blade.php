@@ -10,7 +10,7 @@
                             <a class="logo" href="">
                                 <img class="img-fluid mb-3" src="{{ asset('assets/images/logo/logo-rsud.png') }}"
                                     alt="logorsud">
-                                <h4 style="text-align: center">REPORT SYSTEM</h4>
+                                <h4 style="text-align: center">SAHABAT PELANGGAN</h4>
                                 <h4 style="text-align: center">RSUD KOTA BOGOR</h4>
                             </a>
                         </div>

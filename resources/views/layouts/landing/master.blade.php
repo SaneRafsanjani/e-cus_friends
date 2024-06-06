@@ -32,8 +32,8 @@
                             href="{{ route('complaint.index') }}">Beranda</a></li> --}}
                     <li><a class="nav-link {{ Route::currentRouteName() == 'complaint.create' ? 'active' : '' }}"
                             href="{{ route('complaint.create') }}">Pengaduan</a></li>
-                    <li><a class="nav-link {{ Route::currentRouteName() == 'complaint.show' ? 'active' : '' }}"
-                            href="{{ route('complaint.show') }}">Cari</a></li>
+                    {{-- <li><a class="nav-link {{ Route::currentRouteName() == 'complaint.show' ? 'active' : '' }}"
+                            href="{{ route('complaint.show') }}">Cari</a></li> --}}
                     <li><a class="nav-link {{ Route::currentRouteName() == 'login' ? 'active' : '' }}"
                             href="{{ route('login') }}">Login</a></li>
                 </ul>

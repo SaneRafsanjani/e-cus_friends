@@ -31,8 +31,7 @@
                     
                     <li><a class="nav-link <?php echo e(Route::currentRouteName() == 'complaint.create' ? 'active' : ''); ?>"
                             href="<?php echo e(route('complaint.create')); ?>">Pengaduan</a></li>
-                    <li><a class="nav-link <?php echo e(Route::currentRouteName() == 'complaint.show' ? 'active' : ''); ?>"
-                            href="<?php echo e(route('complaint.show')); ?>">Cari</a></li>
+                    
                     <li><a class="nav-link <?php echo e(Route::currentRouteName() == 'login' ? 'active' : ''); ?>"
                             href="<?php echo e(route('login')); ?>">Login</a></li>
                 </ul>
