@@ -94,7 +94,7 @@
                                     </select>
                                 </div> --}}
                                 <div class="form-group col-md-12 mb-3">
-                                    <button class="btn btn-success">Export</button>
+                                    <button class="btn btn-danger">Cetak PDF</button>
                                 </div>
                             </div>
                         </form>

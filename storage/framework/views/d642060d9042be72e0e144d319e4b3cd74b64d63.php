@@ -36,7 +36,7 @@
                                         <textarea name="desc" id="desc" cols="30" rows="5" class="form-control" required></textarea>
                                     </div>
                                     <div class="form-group col-md-12 mb-2">
-                                        <label for="file">DOkumentasi</label>
+                                        <label for="file">Dokumentasi</label>
                                         <input name="file" type="file" id="file" class="form-control" required>
                                         <small class="text-danger">Batas Upload File: 2 mb</small><br>
                                         <small class="text-danger">Format File Yang Bisa Diupload: png</small>

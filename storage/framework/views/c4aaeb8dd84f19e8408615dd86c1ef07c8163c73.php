@@ -10,3 +10,4 @@
 <h1>huiduiawhiha</h1>
 </body>
 </html>
+<?php /**PATH D:\RSUD\e-cus_friends\resources\views/complaint/admin/export/pdf.blade.php ENDPATH**/ ?>

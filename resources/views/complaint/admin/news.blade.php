@@ -7,7 +7,7 @@
 @endsection
 
 @section('breadcrumb-items')
-<li class="breadcrumb-item"><a href=""> Complaint Detail</i></a></li>
+<li class="breadcrumb-item"><a href=""> Complaint at</i></a></li>
 <li class="breadcrumb-item"><a href=""> Berita Acara</i></a></li>
 @endsection
 

@@ -30,11 +30,10 @@ class DailyExport implements FromView
         $report = Complaint::select(
             '*',
             DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-            DB::raw('MONTH(TANGGAL_PENGADUAN) as MONTH_COMPLAINT')
+            DB::raw('MONTH(TANGGAL_INPUT) as MONTH_COMPLAINT')
         )
-            ->where('IS_MULAI', 2)
-            ->whereMonth('TANGGAL_PENGADUAN', $this->month)
-            ->whereYear('TANGGAL_PENGADUAN', $this->year)
+            ->whereMonth('TANGGAL_INPUT', $this->month)
+            ->whereYear('TANGGAL_INPUT', $this->year)
             ->get();
 
         return view('complaint.admin.export.daily-excel', [
@@ -44,3 +43,4 @@ class DailyExport implements FromView
         ]);
     }
 }
+

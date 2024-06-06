@@ -3,11 +3,11 @@
 @section('title', 'Complaint Detail')
 
 @section('breadcrumb-title')
-    <h3>Complaint Detail</h3>
+    <h3>Data Laporan</h3>
 @endsection
 
 @section('breadcrumb-items')
-    <li class="breadcrumb-item"><a href="">Complaint Detail</i></a></li>
+    <li class="breadcrumb-item"><a href="">Data Laporan</i></a></li>
 @endsection
 
 @push('after-style')
@@ -52,7 +52,7 @@
 
 
 
-                                    <tr>
+                                    {{-- <tr>
                                         <th>Cetak Pdf</th>
 
                                       <td>
@@ -62,7 +62,7 @@
 
                                         </div>
                                     </td>
-                                    </tr>
+                                    </tr> --}}
                                 </table>
                             </div>
                         </div>

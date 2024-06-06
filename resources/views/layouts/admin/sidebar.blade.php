@@ -20,23 +20,23 @@
                     <li class="sidebar-main-title">
                         <div>
                             <h6 class="lan-1">Menu</h6>
-                            <p class="lan-2">E-SIMRS</p>
+                            <p class="lan-2">Sahabat Pelanggan </p>
                         </div>
                     </li>
                     @can('admin')
                         <li class="sidebar-list">
                             <a class="sidebar-link sidebar-title link-nav {{ request()->is('admns/complaint/inbox') || request()->is('admns/complaint/inbox/show/*') ? 'active' : '' }}"
                                 href="{{ route('admin.complaint.inbox') }}">
-                                <i data-feather="activity"> </i><span>Pengaduan</span>
+                                <i data-feather="activity"> </i><span>Laporan</span>
                             </a>
                         </li>
                     @endcan
-                    <li class="sidebar-list mt-2">
+                    {{-- <li class="sidebar-list mt-2">
                         <a class="sidebar-link sidebar-title link-nav {{ request()->is('admns/complaint/follow-up') || request()->is('admns/complaint/follow-up/show/*') || request()->is('admns/complaint/news/*') ? 'active' : '' }}"
                             href="{{ route('admin.complaint.followup') }}">
                             <i data-feather="edit-3"> </i><span>Tindak Lanjut</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="sidebar-list mt-2">
                         <a class="sidebar-link sidebar-title link-nav {{ request()->is('admns/complaint/report') ? 'active' : '' }}"
                             href="{{ route('admin.complaint.report') }}">

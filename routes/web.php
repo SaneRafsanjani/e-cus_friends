@@ -8,6 +8,8 @@ use App\Http\Controllers\User\ComplaintController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

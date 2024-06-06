@@ -1,11 +1,11 @@
 <?php $__env->startSection('title', 'Complaint Detail'); ?>
 
 <?php $__env->startSection('breadcrumb-title'); ?>
-    <h3>Complaint Detail</h3>
+    <h3>Data Laporan</h3>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-items'); ?>
-    <li class="breadcrumb-item"><a href="">Complaint Detail</i></a></li>
+    <li class="breadcrumb-item"><a href="">Data Laporan</i></a></li>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startPush('after-style'); ?>
@@ -42,25 +42,11 @@
                                         <th>Kondisi IGD</th>
                                         <td><?php echo e($complaint->KONDISI_IGD); ?></td>
                                     </tr>
-                                    <tr>
-                                        <th>Foto</th>
-                                        <td><button class="btn btn-pill btn-primary btn-sm" type="button"
-                                            data-bs-target="#lihat" data-bs-toggle="modal" type="button">Lihat</button></td>
-                                    </tr>
 
 
 
-                                    <tr>
-                                        <th>Cetak Pdf</th>
 
-                                      <td>
-                                        <div class="btn-group">
-                                            <a href="<?php echo e(route('admin.complaint.print', $id)); ?>" class="btn btn-primary"
-                                                target="_blank"><i class="fa fa-print"></i>Cetak Pdf </a>
-
-                                        </div>
-                                    </td>
-                                    </tr>
+                                    
                                 </table>
                             </div>
                         </div>

@@ -23,9 +23,9 @@ class MonthlyExport implements FromView
         $report = Complaint::select(
             '*',
             DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-            DB::raw('MONTH(TANGGAL_PENGADUAN) as MONTH_COMPLAINT')
+            DB::raw('MONTH(TANGGAL_INPUT) as MONTH_COMPLAINT')
         )
-            ->whereYear('TANGGAL_PENGADUAN', 2023)
+            ->whereYear('TANGGAL_INPUT', 2023)
             ->groupBy('MONTH_COMPLAINT')
             ->get();
 
