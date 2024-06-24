@@ -12,17 +12,22 @@
             <div class="col-12">
                 <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <div class="card-header">
-
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="display" id="complaint-table">
                                 <thead>
                                     <tr>
-                                        <th>Waktu Laporan</th>
+                                        <th>Kode Pengaduan</th>
+                                        <th>Tanggal/Bulan/Tahun</th>
                                         <th>Keterangan Shift</th>
+                                        <th>Nama Petugas</th>
+                                        <th>Identitas Pasien</th>
                                         <th>Kondisi IGD</th>
-                                        <th>Aksi</th>
+                                        <th>  </th>
+                                        <th> Action</th>
+                                        <th>  </th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,6 +47,25 @@
 @endpush
 
 @push('after-style')
+<style>
+
+    .edit-button {
+        margin-left: 100%;
+        width: 70px;
+
+    }
+
+    #complaint-table th:nth-child(7),
+    #complaint-table td:nth-child(7),
+    #complaint-table th:nth-child(8),
+    #complaint-table td:nth-child(8),
+    #complaint-table th:nth-child(9),
+    #complaint-table td:nth-child(9) {
+        width: -10%;
+    }
+
+
+</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.8/sweetalert2.min.css" integrity="sha512-OWGg8FcHstyYFwtjfkiCoYHW2hG3PDWwdtczPAPUcETobBJOVCouKig8rqED0NMLcT9GtE4jw6IT1CSrwY87uw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endpush
 
@@ -62,26 +86,58 @@
                     },
                 },
                 columns: [
-
+                    {
+                        data: 'KODE_PENGADUAN',
+                        name: 'KODE_PENGADUAN',
+                        visible: false // Menyembunyikan kolom
+                    },
                     {
                         data: 'TANGGAL_INPUT',
                         name: 'TANGGAL_INPUT'
                     },
-
                     {
                         data: 'KETERANGAN_SHIFT',
-                        name: 'KETERANGAN SHIFT'
+                        name: 'KETERANGAN_SHIFT'
+                    },
+
+                    {
+                        data: 'NAMA_PETUGAS',
+                        name: 'NAMA_PETUGAS'
                     },
                     {
+                        data: 'IDENTITAS',
+                        name: 'IDENTITAS'
+                    },
+
+                    {
                         data: 'KONDISI_IGD',
-                        name: 'KONDISI IGD'
+                        name: 'KONDISI_IGD'
                     },
                     {
                         data: 'action',
                         name: 'action',
                         orderable: false,
+                        "className": 'edit-button',
+                        searchable: false,
+
+                    },
+                    {
+                        data: 'edit',
+                        name: 'edit',
+                        orderable: false,
+                        "className": 'edit-button',
                         searchable: false
                     },
+                    {
+                        data: 'delete',
+                        name: 'delete',
+                        orderable: false,
+                        "className": 'edit-button',
+                        searchable: false
+                    },
+
+
+
                 ],
             });
         });

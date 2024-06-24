@@ -12,25 +12,25 @@ class Complaint extends Model
 
     public $incrementing = false;
     protected $table = 'pengaduan';
-    protected $hidden = [
-        'UUID'
-    ];
+    protected $primaryKey = 'UUID'; // Set primary key to 'UUID'
+    protected $hidden = ['UUID'];
     protected $fillable = [
         'UUID',
+        'TANGGAL_INPUT',
         'TANGGAL_PENGADUAN',
-        'LOKASI',
-        'NAMA_BARANG',
-        'VOLUME',
-        'KATEGORI',
+        'KODE_PENGADUAN',
         'TANGGAL_KEJADIAN',
-        'URAIAN',
+        'KONDISI_IGD',
         'FILE',
         'STATUS',
         'KETERANGAN',
-        'PRIORITAS',
-        'TANGGAL_INPUT',
-        'KONDISI_IGD',
-        'KETERANGAN_SHIFT'
+        'KETERANGAN_SHIFT',
+        'NAMA_PETUGAS',
+        'IDENTITAS',
+
+        // 'TANGGAL_INPUT',
+        // 'KONDISI_IGD',
+        // 'KETERANGAN_SHIFT'
     ];
 
     // public function violation()
@@ -51,7 +51,6 @@ class Complaint extends Model
 
     public function diffinminute($t1, $t2)
     {
-
         $time1 = Carbon::createFromFormat('Y-m-d H:i:s', $t1);
         $time2 = Carbon::createFromFormat('Y-m-d H:i:s', $t2);
         $diff_in_hours = $time2->diffInMinutes($time1);

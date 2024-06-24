@@ -3,11 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('breadcrumb-title')
-    <h3>Rekap Laporan</h3>
+    <h3>Report Summary</h3>
 @endsection
 
 @section('breadcrumb-items')
-    <li class="breadcrumb-item"><a href=""> Rekap Laporan</i></a></li>
+    <li class="breadcrumb-item"><a href=""> Report Summary</i></a></li>
 @endsection
 
 @section('content')

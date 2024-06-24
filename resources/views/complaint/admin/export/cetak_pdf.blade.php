@@ -1,48 +1,67 @@
-<style>
-    table {
-        width: 100%;
-        border-collapse: separate;
-        border-spacing: 0 10px; /* Atur jarak antar baris */
-    }
+<!DOCTYPE html>
+<html>
 
-    th, td {
-        padding: 8px;
-        text-align: left;
-    }
+<head>
+    <style>
+        table {
+            width: 120%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            /* Atur jarak antar baris */
+        }
 
-    th {
-        background-color: #f2f2f2;
-    }
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
 
-    tr {
-        background-color: #fff;
-    }
+        @media print {
+            @page {
+                size: landscape;
+            }
 
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-</style>
+            table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
 
-<table>
-    <thead>
-        <tr>
-            <th>No</th>
-            <th>Waktu Laporan</th>
-            <th>Keterangan Shift</th>
-            <th>Kondisi IGD</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($report as $key => $r)
-            <?php
-                $combinedDT  = date('Y-m-d', strtotime($r->TANGGAL_INPUT));
-            ?>
+<body>
+    <table>
+        <thead>
             <tr>
-                <td>{{ $key + 1 }}</td>
-                <td>{{ $r->setDateFormat($r->TANGGAL_INPUT) }}</td>
-                <td>{{ $r->KETERANGAN_SHIFT }}</td>
-                <td>{{ $r->KONDISI_IGD }}</td>
+                <th>No</th>
+                <th>Waktu Laporan</th>
+                <th>Keterangan Shift</th>
+                <th>Nama Petugas</th>
+                <th>Identitas</th>
+                <th>Kondisi IGD</th>
+                <th>Dokumentasi</th>
             </tr>
-        @endforeach
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach ($report as $key => $r)
+                <?php
+                $combinedDT = date('Y-m-d', strtotime($r->TANGGAL_INPUT));
+                ?>
+                <tr>
+                    <td>{{ $key + 1 }}</td>
+                    <td>{{ $r->setDateFormat($r->TANGGAL_INPUT) }}</td>
+                    <td>{{ $r->KETERANGAN_SHIFT }}</td>
+                    <td>{{ $r->NAMA_PETUGAS }}</td>
+                    <td>{{ $r->IDENTITAS }}</td>
+                    <td>{{ $r->KONDISI_IGD }}</td>
+                    <td>
+                        <div>
+                            <img src="{{ public_path('storage/' . $r->FILE) }}" style="width: 50%">
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</body>
+
+</html>

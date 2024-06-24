@@ -22,11 +22,22 @@ class ReportController extends Controller
             return redirect()->route('admin.complaint.report')->withErrors($validation)->withInput();
         }
         $complain = Complaint::select('*')
-            ->whereMonth('TANGGAL_INPUT', $request->daily_month)
-            ->whereYear('TANGGAL_INPUT', $request->daily_year)
-            ->get();
-        $data = ['report' => $complain];
-        return Pdf::loadView('complaint.admin.export.cetak_pdf', $data)->stream();
+        ->whereMonth('TANGGAL_INPUT', $request->daily_month)
+        ->whereYear('TANGGAL_INPUT', $request->daily_year)
+        ->get();
+    $data = ['report' => $complain];
+    return Pdf::loadView('complaint.admin.export.cetak_pdf', $data)->setPaper('a4', 'landscape')->stream();
+
+
+
+    }
+
+    public function report_pdf(Request $request)
+    {
+        $complaint = Complaint::all();
+
+        $pdf = PDF::loadview('complaint.admin.export.pdf',['complaint' => $complaint]);
+        return $pdf->download('');
     }
 
     public function validation(Request $request)

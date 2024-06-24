@@ -24,14 +24,14 @@ class AnnualExport implements FromView
         DB::statement(DB::raw('set @rownum=0'));
         $report = Complaint::select(
             DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-            DB::raw('YEAR(TANGGAL_INPUT) as YEAR_COMPLAINT'),
+            DB::raw('YEAR(TANGGAL_PENGADUAN) as YEAR_COMPLAINT'),
         )
-            ->whereRaw('YEAR(TANGGAL_INPUT) BETWEEN ' . $this->year_start . ' AND ' . $this->year_end)
+            ->whereRaw('YEAR(TANGGAL_PENGADUAN) BETWEEN ' . $this->year_start . ' AND ' . $this->year_end)
             ->groupBy('YEAR_COMPLAINT')
             ->orderBy('YEAR_COMPLAINT', 'asc')
             ->get();
 
-        return view('complaint.admin.export.daily-excel', [
+        return view('complaint.admin.export.annual-excel', [
             'report' => $report,
             'year_start' => $this->year_start,
             'year_end' => $this->year_end

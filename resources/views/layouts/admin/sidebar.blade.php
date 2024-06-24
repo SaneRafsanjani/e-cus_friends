@@ -20,7 +20,7 @@
                     <li class="sidebar-main-title">
                         <div>
                             <h6 class="lan-1">Menu</h6>
-                            <p class="lan-2">Sahabat Pelanggan </p>
+                            <p class="lan-2">Sahabat Pelanggan</p>
                         </div>
                     </li>
                     @can('admin')
